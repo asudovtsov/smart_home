@@ -7,13 +7,13 @@ pub enum Measure {
 }
 
 #[non_exhaustive]
-pub enum UnitTypeRef<'a> {
+pub enum UnitTraitRef<'a> {
     FloatSensor(&'a dyn FloatSensorUnit),
     PowerProvider(&'a dyn PowerProviderUnit),
 }
 
 #[non_exhaustive]
-pub enum UnitTypeMut<'a> {
+pub enum UnitTraitMut<'a> {
     FloatSensor(&'a mut dyn FloatSensorUnit),
     PowerProvider(&'a mut dyn PowerProviderUnit),
 }
@@ -21,8 +21,8 @@ pub enum UnitTypeMut<'a> {
 pub trait Unit<'a> {
     fn id(&self) -> &'static str;
 
-    fn as_trait_ref(&self) -> UnitTypeRef;
-    fn as_trait_mut(&mut self) -> UnitTypeMut;
+    fn as_trait_ref(&self) -> UnitTraitRef;
+    fn as_trait_mut(&mut self) -> UnitTraitMut;
 }
 
 pub trait FloatSensorUnit {

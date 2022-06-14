@@ -9,13 +9,13 @@ fn measure() {
     for ref device in devices {
         for unit in device.units() {
             match unit.as_trait_ref() {
-                UnitTypeRef::FloatSensor(u) => {
+                UnitTraitRef::FloatSensor(u) => {
                     assert!(matches!(
                         u.measure(),
                         Measure::Celsius | Measure::Fahrenheit | Measure::Kelvin
                     ));
                 }
-                UnitTypeRef::PowerProvider(u) => {
+                UnitTraitRef::PowerProvider(u) => {
                     assert!(matches!(u.measure(), Measure::Watt | Measure::Erg));
                 }
                 _ => {}
@@ -31,11 +31,11 @@ fn value_bound() {
     for ref device in devices {
         for unit in device.units() {
             match unit.as_trait_ref() {
-                UnitTypeRef::FloatSensor(u) => {
+                UnitTraitRef::FloatSensor(u) => {
                     assert!(u.sensor_value().is_finite());
                     assert!(u.sensor_value() >= 0.);
                 }
-                UnitTypeRef::PowerProvider(u) => {
+                UnitTraitRef::PowerProvider(u) => {
                     assert!(u.provided_power().is_finite());
                     assert!(u.provided_power() >= 0.);
                 }

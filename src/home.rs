@@ -88,10 +88,10 @@ impl Home {
 
     pub fn unit_state(unit: &dyn Unit) -> String {
         match unit.as_trait_ref() {
-            UnitTypeRef::FloatSensor(u) => {
+            UnitTraitRef::FloatSensor(u) => {
                 format!("sensor value: {}", u.sensor_value())
             }
-            UnitTypeRef::PowerProvider(u) => {
+            UnitTraitRef::PowerProvider(u) => {
                 format!("provided power: {}", u.provided_power())
             }
         }

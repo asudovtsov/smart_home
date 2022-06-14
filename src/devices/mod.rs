@@ -32,12 +32,12 @@ where
         "SocketM1PowerProviderUnit"
     }
 
-    fn as_trait_ref(&self) -> UnitTypeRef {
-        UnitTypeRef::PowerProvider(self)
+    fn as_trait_ref(&self) -> UnitTraitRef {
+        UnitTraitRef::PowerProvider(self)
     }
 
-    fn as_trait_mut(&mut self) -> UnitTypeMut {
-        UnitTypeMut::PowerProvider(self)
+    fn as_trait_mut(&mut self) -> UnitTraitMut {
+        UnitTraitMut::PowerProvider(self)
     }
 }
 
@@ -120,12 +120,12 @@ where
         "TSensorM1SensorUnit"
     }
 
-    fn as_trait_ref(&self) -> UnitTypeRef {
-        UnitTypeRef::FloatSensor(self)
+    fn as_trait_ref(&self) -> UnitTraitRef {
+        UnitTraitRef::FloatSensor(self)
     }
 
-    fn as_trait_mut(&mut self) -> UnitTypeMut {
-        UnitTypeMut::FloatSensor(self)
+    fn as_trait_mut(&mut self) -> UnitTraitMut {
+        UnitTraitMut::FloatSensor(self)
     }
 }
 
