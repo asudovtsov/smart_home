@@ -38,11 +38,11 @@ fn main() {
     assert_eq!(bedroom.device_count(), 1);
     assert_eq!(bathroom.device_count(), 1);
 
-    home.add_room("Hall".into(), hall);
-    home.add_room("Living room".into(), livingroom);
-    home.add_room("Kitchen".into(), kitchen);
-    home.add_room("Bedroom".into(), bedroom);
-    home.add_room("Bathroom".into(), bathroom);
+    home.add_room("Hall".into(), hall).expect("");
+    home.add_room("Living room".into(), livingroom).expect("");
+    home.add_room("Kitchen".into(), kitchen).expect("");
+    home.add_room("Bedroom".into(), bedroom).expect("");
+    home.add_room("Bathroom".into(), bathroom).expect("");
 
     assert_eq!(home.room_count(), 5);
 
