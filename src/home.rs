@@ -19,6 +19,18 @@ pub struct Home {
     rooms: HashMap<String, Room>,
 }
 
+impl std::fmt::Display for AddDeviceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "")
+    }
+}
+
+impl std::error::Error for AddDeviceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        None
+    }
+}
+
 impl Room {
     pub fn new() -> Self {
         Self {
